@@ -47,12 +47,22 @@ main .login .content form .inputSenha input {
     padding: 1rem 0.75rem;
 }
 
-
-main .login .content form .inputSenha input:hover{
-    border-color: var(--purple);
+main .login .content form .inputEmail input:hover,
+main .login .content form .inputSenha input:hover,
+main .login .content form .inputEmail input:focus,
+main .login .content form .inputSenha input:focus {
+    border: 1px solid var(--purple);
+    outline: none;
 }
-main .login .content form .inputEmail input:hover{
-    border-color: var(--purple);
+
+main .login .content form .inputEmail input:invalid,
+main .login .content form .inputSenha input:invalid {
+    border: 1px solid red;
+}
+
+main .login .content form .inputEmail input:disabled,
+main .login .content form .inputSenha input:disabled {
+    border: 0;
 }
 
 main .login .content form .buttonEntrar {
@@ -63,30 +73,58 @@ main .login .content form .buttonEntrar {
     background-color: var(--purple);
     font-weight: 700;
     color: white;
+    cursor: pointer;
+    transition: .2s;
 }
 
-main .login .content form .buttonEntrar:active{
+main .login .content form .buttonEntrar:hover {
     background-color: #9F67FF;
+}
+main .login .content form .inputSenha .esqueceuSenha{
+    cursor: pointer;
+    font-size: var(--desk-sub);
+    font-weight: bold;
+    color: var(--purple);
+}
+main .login .content form .inputSenha .box {
+    display: flex;
+    justify-content: space-between;
 }
 
 main .login .content p .destaque {
     font-weight: 700;
     color: var(--purple);
-}
-
-.destaque{
-    border: 2px solid transparent;
     cursor: pointer;
 }
-.destaque:hover{
-    border-bottom-color: var(--purple);
+
+main .login .content p .destaque:hover {
+    text-decoration: underline;
 }
 
-img{
-    height: 1.3em;
-    float: left;
+.inputSenha {
+    position: relative;
+  }
+  
+.passwordContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+    
+.passwordIcon {
+    position: absolute;
+    right: 10px;
     cursor: pointer;
+  }
+
+.input__box{
+    width: 100%;
 }
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 0;
+  }
 
 @media screen and (min-width: 900px) {
     main {
